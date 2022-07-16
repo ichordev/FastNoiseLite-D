@@ -1,6 +1,6 @@
 extern(C) nothrow @nogc{
-	//alias FNLfloat = float;
-	alias FNLfloat = double;
+	//alias Float = float;
+	alias Float = double;
 
 	enum NoiseType{
 		openSimplex2,
@@ -28,7 +28,7 @@ extern(C) nothrow @nogc{
 
 	enum CellularDistFn{
 		euclidean,
-		distEuclideanSQ,
+		distEuclideanSq,
 		distManhattan,
 		distHybrid,
 	}
@@ -53,7 +53,7 @@ extern(C) nothrow @nogc{
 	* Structure containing entire noise system state.
 	* @note Must only be created using fnlCreateState(optional: seed). To ensure defaults are set.
 	*/
-	struct FNLState{
+	struct NoiseState{
 		/**
 		* Seed used for all noise types.
 		* @remark Default: 1337
@@ -153,19 +153,19 @@ extern(C) nothrow @nogc{
 		* Creates a noise state with default values.
 		* @param seed Optionally set the state seed.
 		*/
-		FNLState fnlCreateState();
+		NoiseState fnlCreateState();
 		
 		/**
 		* 2D noise at given position using the state settings
 		* @returns Noise output bounded between -1 and 1.
 		*/
-		float fnlGetNoise2D(FNLState* state, FNLfloat x, FNLfloat y);
+		float fnlGetNoise2D(NoiseState* state, Float x, Float y);
 		
 		/**
 		* 3D noise at given position using the state settings
 		* @returns Noise output bounded between -1 and 1.
 		*/
-		float fnlGetNoise3D(FNLState* state, FNLfloat x, FNLfloat y, FNLfloat z);
+		float fnlGetNoise3D(NoiseState* state, Float x, Float y, Float z);
 		
 		/**
 		* 2D warps the input position using current domain warp settings.
@@ -176,7 +176,7 @@ extern(C) nothrow @nogc{
 		* noise = fnlGetNoise2D(&state, x, y);
 		* ```
 		*/
-		void fnlDomainWarp2D(FNLState* state, FNLfloat* x, FNLfloat* y);
+		void fnlDomainWarp2D(NoiseState* state, Float* x, Float* y);
 		
 		/**
 		* 3D warps the input position using current domain warp settings.
@@ -187,7 +187,7 @@ extern(C) nothrow @nogc{
 		* noise = fnlGetNoise3D(&state, x, y, z);
 		* ```
 		*/
-		void fnlDomainWarp3D(FNLState* state, FNLfloat* x, FNLfloat* y, FNLfloat* z);
+		void fnlDomainWarp3D(NoiseState* state, Float* x, Float* y, Float* z);
 	}
 		alias createState = fnlCreateState;
 		alias getNoise2D = fnlGetNoise2D;
