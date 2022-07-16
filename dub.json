@@ -2,7 +2,7 @@
 	"authors": [
 		"Aya Partridge"
 	],
-	"description": "FastNoiseLite translation",
+	"description": "FastNoiseLite bindings (static)",
 	"license": "MIT",
 	"name": "fnl",
 	"configurations": [
