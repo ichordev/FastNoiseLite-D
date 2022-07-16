@@ -28,9 +28,9 @@ extern(C) nothrow @nogc{
 
 	enum CellularDistFn{
 		euclidean,
-		distEuclideanSq,
-		distManhattan,
-		distHybrid,
+		euclideanSq,
+		manhattan,
+		hybrid,
 	}
 
 	enum CellularReturnType{
