@@ -1,0 +1,25 @@
+{
+	"authors": [
+		"Aya Partridge"
+	],
+	"description": "FastNoiseLite translation",
+	"license": "MIT",
+	"name": "fnl",
+	"configurations": [
+		{
+			"name": "default",
+			"platforms": [
+				"linux",
+				"macos",
+				"windows"
+			],
+			"targetType": "staticLibrary",
+		},
+	],
+	"preBuildCommands": [
+		"gcc -O2 -r -o libFastNoiseLite.o FastNoiseLite.c"
+	],
+	"lflags": [
+		"$PACKAGE_DIR/libFastNoiseLite.o"
+	],
+}
