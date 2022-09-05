@@ -17,7 +17,7 @@
 		},
 	],
 	"preBuildCommands": [
-		"gcc -O2 -r -o libFastNoiseLite.o FastNoiseLite.c"
+		"gcc -O2 -r -fPIE -o libFastNoiseLite.o FastNoiseLite.c"
 	],
 	"lflags": [
 		"$PACKAGE_DIR/libFastNoiseLite.o"

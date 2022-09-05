@@ -189,9 +189,9 @@ extern(C) nothrow @nogc{
 		*/
 		void fnlDomainWarp3D(NoiseState* state, Float* x, Float* y, Float* z);
 	}
-		alias createState = fnlCreateState;
-		alias getNoise2D = fnlGetNoise2D;
-		alias getNoise3D = fnlGetNoise3D;
-		alias domainWarp2D = fnlDomainWarp2D;
-		alias domainWarp3D = fnlDomainWarp3D;
+	alias createState = fnlCreateState;
+	alias getNoise2D = fnlGetNoise2D;
+	alias getNoise3D = fnlGetNoise3D;
+	alias domainWarp2D = fnlDomainWarp2D;
+	alias domainWarp3D = fnlDomainWarp3D;
 }
