@@ -52,10 +52,6 @@
 #ifndef FASTNOISELITE_H
 #define FASTNOISELITE_H
 
-// Switch between using floats or doubles for input position
-//typedef float FNLfloat;
-typedef double FNLfloat;
-
 #if defined(__cplusplus)
 extern "C" {
 #endif
@@ -262,7 +258,7 @@ void fnlDomainWarp3D(fnl_state *state, FNLfloat *x, FNLfloat *y, FNLfloat *z);
 // ====================
 // Below this line is the implementation
 // ====================
-#define FNL_IMPL
+
 #if defined(FNL_IMPL)
 
 // Constants

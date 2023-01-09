@@ -5,19 +5,22 @@
 	"description": "FastNoiseLite bindings (static)",
 	"license": "MIT",
 	"name": "fnl",
+	
+	"targetType": "staticLibrary",
 	"configurations": [
 		{
-			"name": "default",
-			"platforms": [
-				"linux",
-				"macos",
-				"windows"
+			"name": "double",
+			"preBuildCommands": [
+				"gcc -O2 -w -r -fPIE -o libFastNoiseLite.o fnl_double.c"
 			],
-			"targetType": "staticLibrary",
 		},
-	],
-	"preBuildCommands": [
-		"gcc -O2 -r -fPIE -o libFastNoiseLite.o FastNoiseLite.c"
+		{
+			"name": "float",
+			"preBuildCommands": [
+				"gcc -O2 -w -r -fPIE -o libFastNoiseLite.o fnl_float.c"
+			],
+			"versions": ["FNL_Float"],
+		},
 	],
 	"lflags": [
 		"$PACKAGE_DIR/libFastNoiseLite.o"
