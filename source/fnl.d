@@ -56,94 +56,94 @@ struct NoiseState{
 	* Seed used for all noise types.
 	* @remark Default: 1337
 	*/
-	int seed;
+	int seed = 1337;
 	
 	/**
 	* The frequency for all noise types.
 	* @remark Default: 0.01
 	*/
-	float frequency;
+	float frequency = 0.01f;
 	
 	/**
 	* The noise algorithm to be used by GetNoise(...).
 	* @remark Default: NoiseType.openSimplex2
 	*/
-	NoiseType noiseType;
+	NoiseType noiseType = NoiseType.openSimplex2;
 	
 	/**
 	* Sets noise rotation type for 3D.
 	* @remark Default: RotationType3D.none
 	*/
-	RotationType3D rotationType3D;
+	RotationType3D rotationType3D = RotationType3D.none;
 	
 	/**
 	* The method used for combining octaves for all fractal noise types.
 	* @remark Default: None
 	* @remark FractalType.domainWarp... only effects fnlDomainWarp...
 	*/
-	FractalType fractalType;
+	FractalType fractalType = FractalType.none;
 	
 	/**
 	* The octave count for all fractal noise types.
 	* @remark Default: 3
 	*/
-	int octaves;
+	int octaves = 3;
 	
 	/**
 	* The octave lacunarity for all fractal noise types.
 	* @remark Default: 2.0
 	*/
-	float lacunarity;
+	float lacunarity = 2.0f;
 	
 	/**
 	* The octave gain for all fractal noise types.
 	* @remark Default: 0.5
 	*/
-	float gain;
+	float gain = 0.5f;
 	
 	/**
 	* The octave weighting for all none Domaain Warp fractal types.
 	* @remark Default: 0.0
 	* @remark 
 	*/
-	float weightedStrength;
+	float weightedStrength = 0.0f;
 	
 	/**
 	* The strength of the fractal ping pong effect.
 	* @remark Default: 2.0
 	*/
-	float pingPongStrength;
+	float pingPongStrength = 2.0f;
 	
 	/**
 	* The distance function used in cellular noise calculations.
-	* @remark Default: CellularDistFn.distEuclideanSQ
+	* @remark Default: CellularDistFn.euclideanSq
 	*/
-	CellularDistFn cellularDistFn;
+	CellularDistFn cellularDistFn = CellularDistFn.euclideanSq;
 	
 	/**
 	* The cellular return type from cellular noise calculations.
-// 	 * @remark Default: CellularReturnType.dist
+	* @remark Default: CellularReturnType.dist
 	*/
-	CellularReturnType cellularReturnType;
+	CellularReturnType cellularReturnType = CellularReturnType.dist;
 	
 	/**
 	* The maximum distance a cellular point can move from it's grid position.
 	* @remark Default: 1.0
 	* @note Setting this higher than 1 will cause artifacts.
 	*/
-	float cellularJitterMod;
+	float cellularJitterMod = 1.0f;
 	
 	/**
 	* The warp algorithm when using fnlDomainWarp...
 	* @remark Default: OpenSimplex2
 	*/
-	DomainWarpType domainWarpType;
+	DomainWarpType domainWarpType = DomainWarpType.openSimplex2;
 	
 	/**
 	* The maximum warp distance from original position when using fnlDomainWarp...
 	* @remark Default: 1.0
 	*/
-	float domainWarpAmp;
+	float domainWarpAmp = 1.0;
 }
 
 private extern(C) nothrow @nogc{
