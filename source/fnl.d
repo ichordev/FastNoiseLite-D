@@ -102,7 +102,7 @@ struct NoiseState{
 	float gain = 0.5f;
 	
 	/**
-	* The octave weighting for all none Domaain Warp fractal types.
+	* The octave weighting for all none Domain Warp fractal types.
 	* @remark Default: 0.0
 	* @remark 
 	*/
