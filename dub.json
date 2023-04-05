@@ -11,13 +11,13 @@
 		{
 			"name": "double",
 			"preBuildCommands": [
-				"gcc -O2 -w -r -fPIE -o libFastNoiseLite.o fnl_double.c"
+				"gcc -O2 -w -r -o libFastNoiseLite.o fnl_double.c"
 			],
 		},
 		{
 			"name": "float",
 			"preBuildCommands": [
-				"gcc -O2 -w -r -fPIE -o libFastNoiseLite.o fnl_float.c"
+				"gcc -O2 -w -r -o libFastNoiseLite.o fnl_float.c"
 			],
 			"versions": ["FNL_Float"],
 		},
